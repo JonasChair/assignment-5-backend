@@ -2,7 +2,10 @@ import db from "../db.js";
 
 const GET_PET_LOGS = async (req, res) => {
     try {
-        const logs = await db.query(`SELECT * FROM logs WHERE pet_id = ${req.params.id}`);
+        const logs = await db.query(`SELECT * FROM logs 
+        INNER JOIN pets
+        ON logs.pet_id = pets.id
+        WHERE pet_id = ${req.params.id}`);
         return res.json({ logs: logs.rows });
     } catch (err) {
         console.log("ERROR: ", err);

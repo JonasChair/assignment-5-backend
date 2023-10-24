@@ -1,10 +1,10 @@
 import express from "express";
 import cors from "cors";
 import "dotenv/config";
-import petRouter from "./routes/pets.js";
-import medicationRouter from "./routes/medications.js";
-import logRouter from "./routes/logs.js";
-import presciptionRouter from "./routes/prescriptions.js";
+import petRouter from "./v1/routes/pets.js";
+import medicationRouter from "./v1/routes/medications.js";
+import logRouter from "./v1/routes/logs.js";
+import presciptionRouter from "./v1/routes/prescriptions.js";
 
 const app = express();
 app.use(express.json());
